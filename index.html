@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Burgur Burgur </title>
+<title>Burgur Burgur Simple</title>
 <style>
 body { font-family: Arial; background:#f2f4f8; padding:20px; }
 .container { max-width:1000px; margin:auto; background:white; padding:20px; border-radius:12px; }
@@ -41,8 +41,8 @@ button:hover { background:#0056b3; }
 </head>
 <body>
 
-<audio id="bgMusic" autoplay loop>
-<source src="https://drive.google.com/uc?export=download&id=1IAbG9umN6PORvrJwcjdbMK8B3jUfqQzV" type="audio/mpeg">
+<audio id="bgMusic" loop>
+  <source src="gr0za-fun-pop-background-music-468332.mp3" type="audio/mpeg">
 </audio>
 
 <div class="container">
@@ -96,13 +96,6 @@ button:hover { background:#0056b3; }
     </div>
   </div>
 </div>
-
-document.addEventListener("click", function () {
-  const music = document.getElementById("bgMusic");
-  if (music) {
-    music.play().catch(()=>{});
-  }
-}, { once: true });
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -230,7 +223,12 @@ window.joinRoom=async function(){
   }
 
   listenToRoom();
+
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.5;
+  music.play().catch(()=>{});
 }
+
 
 window.addItem=async function(name,price,points){
 
